@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+  </title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="css.css">
+  <link rel="icon" type="image/x-icon" href="urban.png">
+
+</head>
+
+<body text="white">
+
+  <table id="table1">
+    <tr>
+      <td>
+        <div id="div1">
+
+          <p id="p1">
+            <b> HR System </b>
+
+              
+          </p>
+        </div>
+
+      </td>
+      <td>
+        <div id="div2">
+          <ul>
+            <li><a class="active" href="main.php">Home</a></li>
+     
+            <li><a href="login.php">Login</a></li>
+            <li><a href="about.html" target="_blank">About</a></li>
+            <li><a href="job_main.html">Jobs</a></li>
+            <li><a href="#about">Services</a></li>
+           
+          </ul>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+
+  <div class="galleryContainer">
+    <div class="slideShowContainer">
+      <div id="playPause" onclick="playPauseSlides()"></div>
+      <div onclick="plusSlides(-1)" class="nextPrevBtn leftArrow"><span class="arrow arrowLeft"></span></div>
+      <div onclick="plusSlides(1)" class="nextPrevBtn rightArrow"><span class="arrow arrowRight"></span></div>
+      <div class="captionTextHolder">
+        <p class="captionText slideTextFromTop"></p>
+      </div>
+      <div class="imageHolder">
+        <img src="img_1.jpeg">1366X768
+        <p class="captionText">HR System</p>
+      </div>
+      <div class="imageHolder">
+        <img src="img_2.jpg">
+        <p class="captionText">Work</p>
+      </div>
+      <div class="imageHolder">
+        <img src="img_3.jpg">
+        <p class="captionText">Compane</p>
+      </div>
+      <div class="imageHolder">
+        <img src="img_4.jpg">
+        <p class="captionText">Caption Text-04</p>
+      </div>
+    </div>
+    <div id="dotsContainer"></div>
+  </div>
+
+
+  <table id="table2">
+    <tr>
+      <td id="td1">
+        <img id="icon" src="building.png">
+      </td>
+
+      <td id="td2">
+        <p> Visit
+          <br>500 Terry Francois Street
+          <br>San Francoisco,CA 94158 </p>
+      </td>
+
+      <td id="td3">
+        <img id="icon" src="telephone.png">
+      </td>
+      <td id="td2">
+        <p>Call
+          <br> T: 123-456-7890
+          <br>F: 123-456-7890</p>
+      </td>
+      <td id="td3">
+        <img id="icon" src="mail.png">
+      </td>
+      <td id="td2">
+        <p>Contact <br> info@mysite.com</p>
+      </td>
+      <td id="td3">
+        <img id="icon" src="copyright.png">
+      </td>
+      <td>
+        <p>2020 by HR system</p>
+      </td>
+
+    </tr>
+  </table>
+  <script src="myScript.js"></script>
+</body>
+
+</html>

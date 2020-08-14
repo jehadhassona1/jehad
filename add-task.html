@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Side Navigation Bar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles_menu.css">
+  <link rel="stylesheet" href="add_task.css">
+  
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="emp_task.js"></script>
+  <script src="add_task.js"></script>
+  <script src="menu_adim.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".hamburger").click(function () {
+        $(".wrapper").toggleClass("collapse");
+      });
+
+    });
+  $("input").on("change", function() {
+    this.setAttribute(
+        "data-date",
+        moment(this.value, "YYYY-MM-DD")
+        .format( this.getAttribute("data-date-format") )
+    )
+}).trigger("change")
+  </script>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="top_navbar">
+      <div class="hamburger">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+      <div class="top_menu">
+        <div class="logo">HR System</div>
+        <ul>
+          <li><a href="#">
+              <i class="fas fa-search"></i></a></li>
+          <li><a href="#">
+              <i class="fas fa-bell"></i>
+            </a></li>
+          <li><a href="#">
+              <i class="fas fa-user"></i>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <ul>
+        <li>
+          <span class="icon">
+            <div id="emp"><img src="admin.jpg" alt="User Avatar"></div>
+          </span>
+          <span class="title " id="name">My Mame</span> </li>
+
+        <li onclick="fun_En_task()"><a class="active">
+            <span class="icon"><i class="fa fa-tasks"></i></span>
+            <span class="title">Tasks</span> <span class="icon" id="icon_task">
+              <i class="fas fa-angle-up"
+              id="icon-task"></i></span></a>
+            </li>
+            <div id="task_menu">
+            <li><a href="#" >
+              <span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+              <span class="title">Add Tasks</span></a></li>
+              <li><a href="delete-task.php" >
+                <span class="icon"><i class="far fa-calendar-times"></i></span>
+                <span class="title">delete Tasks</span></a></li>
+                <li><a href="update-task.php" >
+                  <span class="icon"><i class="fas fa-edit"></i></span>
+                  <span class="title">update Tasks</span></a></li>
+              </div>
+          
+          
+        <li><a href="">
+            <span class="icon"><i class="fa fa-envelope"></i></span>
+            <span class="title">Massgaes</span>
+          </a></li>
+        <li><a href="">
+            <span class="icon"><i class="fa fa-briefcase"></i></span>
+
+            <span class="title">Features</span>
+          </a></li>
+        <li><a href="">
+            <span class="icon"><i class="fa fa-hourglass-half"></i></span>
+            <span class="title">Vacations</span>
+          </a></li>
+        <li><a href="">
+            <span class="icon"><i class="fa fa-id-card"></i></span>
+            <span class="title">Personal information</span>
+          </a></li>
+          <li onclick="fun_En_account()"><a >
+            <span class="icon"><i class="fa fa-users"></i></span>
+            <span class="title">Account</span>
+            <span class="icon" id="icon_task">
+              <i class="fas fa-angle-up"
+              id="icon-Account"></i></span>
+          </a></li>
+          <div id="content">
+          <li><a href="" >
+            <span class="icon"><i class="fas fa-user-plus"></i></span>
+            <span class="title"> Add&Update</span>
+          </a></li>
+          <li><a href="" >
+            <span class="icon"><i class="fas fa-user-times"></i></span>
+            <span class="title">Delete</span>
+          </a></li>
+        </div>
+
+          <li><a href="" >
+            <span class="icon"><i class="fas fa-align-right"></i></span>
+            <span class="title">jobs</span>
+          </a></li>
+
+
+        <li><a href="">
+            <span class="icon"><i class="fa fa-power-off"></i></span>
+            <span class="title">Logout</span>
+          </a></li>
+      </ul>
+    </div>
+
+    <div class="main_container">
+
+      <div class="item">
+        <p id="menu_name">Add Tasks</p>
+        <div id="add_task">
+        <form onsubmit="return disData()" action="#" method="POST">
+          <section >
+          <label>task name  </label>
+          <input type="text" name="tname" required>
+        </section>
+        <section >
+         <label>task number </label>
+          <input type="text" name="tnumber" required>
+        <section >
+          <label>start date </label>
+          <input type="date" id="start0" name="start"  min="2020-01-01" required>
+        </section>
+        <section >
+          <label>end date </label>
+          <input type="date" id="start1" name="end" value="" min="2020-01-01" required>
+          
+        </section>
+        <p id="error2">* Unacceptable date</p>
+        <section >
+          <label>Details of the tasks </label>
+          <textarea name="Details" required></textarea>
+          </section>
+          <div id="add_emplyee">  
+            
+            <div id="menu" onclick="fun_Enable1_Dis1()">Add an employee with the task<span class="icon" id="icon_task">
+              <i class="fa fa-chevron-circle-up"
+              id="icon1"></i></span></div>
+              <table id="table1">
+
+              <thead >
+                <th>__</th>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Profession</th>
+                <th>Email</th>
+                <th>phone number</th>
+             
+              </thead>
+              <tbody>
+  <tr>
+   <td><input type='radio' id='em1' name='gender' value='' required ></td>
+                  <td>111</td>
+                  <td>jehad</td>
+                  <td>PHP</td>
+                  <td>jehad@gmail.com</td>
+                  <td>3369995</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' id='em1' name='gender' value='' required ></td>
+                  <td>222</td>
+                  <td>Mahmmode</td>
+                  <td>android</td>
+                  <td>mahmmode@gmail.com</td>
+                  <td>6698855</td>
+                </tr>
+              </tbody>
+            </table>
+            <input type="submit" id="submit" value="Save and submit" >
+            
+
+
+
+          </div>
+
+        </form>
+        <div id="menu" onclick="fun_Enable1_Dis2()">View employee tasks<span class="icon" id="icon_task">
+          <i class="fa fa-chevron-circle-up"
+          id="icon2"></i></span></div>
+        
+        <table id="table2">
+
+          <thead >
+            <th>Employee Name</th>
+            <th>TaskName</th>
+            <th>Task Number</th>
+            <th>Remaining time</th>
+            <th>Delivery status</th>
+           
+          </thead>
+          <tbody>
+         
+<tr>
+      <td>111</td> 
+      <td>Update Datebace</td> 
+      <td>87942</td>           
+      <td>1 day</td> 
+      <td>finished</td> 
+</tr>
+<tr>
+      <td>222</td> 
+      <td>clean Datebace</td> 
+      <td>145428</td>           
+      <td>41 days</td> 
+      <td>not finished</td> 
+</tr>
+          </tbody>
+        </table>
+
+      </div>
+
+
+
+
+
+
+       
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
